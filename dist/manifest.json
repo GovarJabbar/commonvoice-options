@@ -3,7 +3,6 @@
     "version": "1.0.0",
     "description": "A simple extension to add some simple and convenient options.",
     "permissions": [
-        "webNavigation",
         "storage",
         "tabs"
     ],
