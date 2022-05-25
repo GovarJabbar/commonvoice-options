@@ -1,6 +1,7 @@
 ## Commonvoice Options (Chrome Extension)
 
-# Installation
+
+### Installation
 
 ```
 npm install
