@@ -5,9 +5,10 @@
     "permissions": [
         "webNavigation",
         "storage",
-        "https://commonvoice.mozilla.org/*",
-        "http://commonvoice.mozilla.org/*",
         "tabs"
+    ],
+    "host_permissions": [
+        "*://commonvoice.mozilla.org/*"
     ],
     "icons": {
         "16": "images/icon-16x16.png",
@@ -15,9 +16,7 @@
         "150": "images/icon-150x150.png"
     },
     "background": {
-        "scripts": [
-            "js/background.js"
-        ]
+        "service_worker": "js/background.js"
     },
     "content_scripts": [{
         "matches": [
@@ -27,9 +26,9 @@
             "js/inject.js"
         ]
     }],
-    "browser_action": {
+    "action": {
         "default_popup": "popup.html",
         "default_icon": "images/icon-32x32.png"
     },
-    "manifest_version": 2
+    "manifest_version": 3
 }

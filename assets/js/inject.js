@@ -4,7 +4,6 @@ chrome.storage.sync.get([
 ], (result) => {
     if (result.toggleAutoPlayStatus) {
         // AutoPlay Script
-        console.log('toggleAutoPlayStatus');
         setTimeout(function() {
             setInterval(function() {
                 if (!document.querySelectorAll("#listen-page > div > div > div.primary-buttons > div.stop > button").length && document.querySelectorAll("#listen-page > div > div > div.primary-buttons > div > button").length) {
@@ -16,7 +15,6 @@ chrome.storage.sync.get([
 
     if (result.toggleForceListenStatus) {
         // ForceListen Script
-        console.log('toggleForceListenStatus');
         setInterval(() => {
             if (document.querySelectorAll(".record-instead").length) {
                 // window.location.reload()
