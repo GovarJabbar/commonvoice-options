@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <img height="50" src="images/commonvoice.svg" alt="Commonvoice title">
+        <img height="50" src="images/commonvoice.svg" alt="Commonvoice icon">
 
         <hr class="opacity-30">
 
