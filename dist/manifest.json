@@ -1,0 +1,35 @@
+{
+    "name": "Commonvoice Options",
+    "version": "1.0.0",
+    "description": "A simple extension to add some simple and convenient options.",
+    "permissions": [
+        "webNavigation",
+        "storage",
+        "https://commonvoice.mozilla.org/*",
+        "http://commonvoice.mozilla.org/*",
+        "tabs"
+    ],
+    "icons": {
+        "16": "images/icon-16x16.png",
+        "32": "images/icon-32x32.png",
+        "150": "images/icon-150x150.png"
+    },
+    "background": {
+        "scripts": [
+            "js/background.js"
+        ]
+    },
+    "content_scripts": [{
+        "matches": [
+            "*://commonvoice.mozilla.org/*"
+        ],
+        "js": [
+            "js/inject.js"
+        ]
+    }],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": "images/icon-32x32.png"
+    },
+    "manifest_version": 2
+}
