@@ -25,6 +25,7 @@
 export default {
     data() {
         return {
+            base_url: 'commonvoice.mozilla.org',
             autoplay_status: true,
             force_listen_status: true,
         }
@@ -56,9 +57,23 @@ export default {
 
         reload() {
             setTimeout(() => {
-                chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-                    chrome.tabs.reload(tabs[0].id);
+
+                const tabs = chrome.tabs
+                const self = this
+                chrome.windows.getAll({ populate: true }, function (windows) {
+                    windows.forEach(function (window) {
+                        window.tabs.forEach(function (tab) {
+
+                            if (tab.url.indexOf("http://" + self.base_url) != -1 || tab.url.indexOf("https://" + self.base_url) != -1) {
+                                tabs.reload(tab.id);
+                            }
+                        });
+                    });
                 });
+
+                // chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+                //     chrome.tabs.reload(tabs[0].id);
+                // });
             }, 100);
         }
 
