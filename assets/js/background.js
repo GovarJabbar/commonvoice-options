@@ -1,13 +1,13 @@
 // when the extension is first installed, set default values
 chrome.runtime.onInstalled.addListener(function() {
     chrome.storage.sync.set({
-        toggleAutoPlayStatus: true,
+        toggleAutoPlayStatus: '1',
         toggleForceListenStatus: true,
     }, function() {});
 });
 
 // set up initial chrome storage values
-var toggleAutoPlayStatus = true;
+var toggleAutoPlayStatus = '1';
 var toggleForceListenStatus = true;
 
 chrome.storage.sync.get([

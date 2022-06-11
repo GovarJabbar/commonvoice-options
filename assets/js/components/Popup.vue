@@ -7,8 +7,9 @@
         <div class="block">
             <div class="title">Autoplay</div>
             <div class="buttons">
-                <button type="button" class="state-off" :class="{'is-active': !autoplay_status}" @click="setAutoPlay(false)">Off</button>
-                <button type="button" class="state-on" :class="{'is-active': autoplay_status}" @click="setAutoPlay(true)">On</button>
+                <button type="button" class="state-off" :class="{'is-active': autoplay_status == '0'}" @click="setAutoPlay('0')">Off</button>
+                <button type="button" class="state-on" :class="{'is-active': autoplay_status == '1'}" @click="setAutoPlay('1')">Once</button>
+                <button type="button" class="state-on" :class="{'is-active': autoplay_status == '2'}" @click="setAutoPlay('2')">Loop</button>
             </div>
         </div>
         <hr class="opacity-30">

@@ -1,6 +1,6 @@
 {
     "name": "Commonvoice Options",
-    "version": "1.0.1",
+    "version": "1.2.0",
     "description": "A simple extension to add some simple and convenient options.",
     "permissions": [
         "storage",
